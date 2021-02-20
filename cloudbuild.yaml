@@ -9,16 +9,16 @@ steps:
   waitFor: ['build-image-myapp']
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
-    - 'run'
-    - 'deploy'
-    - 'myawesomeapp'
-    - '--image'
-    - 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
-    - '--region'
-    - 'us-east4'
-    - '--platform'
-    - 'managed'
-    - '--allow-unauthenticated'
+  - 'run'
+  - 'deploy'
+  - 'myawesomeapp'
+  - '--image'
+  - 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
+  - '--region'
+  - 'us-east4'
+  - '--platform'
+  - 'managed'
+  - '--allow-unauthenticated'
   id: 'deploy-to-cloud-run'
   waitFor: [push-image-to-container-registry']
    

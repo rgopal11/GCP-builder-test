@@ -19,8 +19,8 @@ steps:
     - '--platform'
     - 'managed'
     - '--allow-unauthenticated'
-   waitFor: [push-image-to-container-registry']
-   id: 'deploy-to-cloud-run'
+  waitFor: [push-image-to-container-registry']
+  id: 'deploy-to-cloud-run'
    
 images:
 - 'gcr.io/$PROJECT_ID/myapp:latest'
